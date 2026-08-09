@@ -2,405 +2,558 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>InclusiDesign AI</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+          href="style.css">
+
 </head>
+
 
 <body>
 
-    <!-- TOP NAVIGATION -->
 
-    <header class="topbar">
+<!-- =================================
+     TOP NAVIGATION
+================================= -->
 
-        <div class="logo">
-            ✦ InclusiDesign
-            <span>AI</span>
-        </div>
+<header class="topbar">
 
-        <div class="project">
-            My College Website
-        </div>
+    <div class="logo">
+        ✦ InclusiDesign
+        <span>AI</span>
+    </div>
 
-        <button class="preview-btn" onclick="previewDesign()">
-            Preview ↗
-        </button>
+    <div class="project">
+        My College Website
+    </div>
 
-    </header>
+    <button
+        class="preview-btn"
+        id="previewBtn">
+
+        Preview ↗
+
+    </button>
+
+</header>
 
 
-    <!-- MAIN WORKSPACE -->
 
-    <main class="workspace">
+<!-- =================================
+     MAIN WORKSPACE
+================================= -->
+
+<main class="workspace">
 
 
-        <!-- LEFT TOOLBAR -->
+<!-- =================================
+     LEFT SIDEBAR
+================================= -->
 
-        <aside class="sidebar">
+<aside class="sidebar">
 
-            <p class="tool-title">
-                DESIGN TOOLS
+    <p class="tool-title">
+        DESIGN TOOLS
+    </p>
+
+
+    <button id="addTextBtn">
+        ✦ Add Text
+    </button>
+
+
+    <button id="addButtonBtn">
+        ▣ Add Button
+    </button>
+
+
+    <button id="addImageBtn">
+        ▧ Add Image
+    </button>
+
+
+    <button id="addSectionBtn">
+        ＋ Add Section
+    </button>
+
+
+    <div class="tip">
+
+        <strong>
+            💡 Quick Tip
+        </strong>
+
+        <p>
+            Design your website.
+            Your AI partner will suggest
+            improvements—but you stay in control.
+        </p>
+
+    </div>
+
+</aside>
+
+
+
+<!-- =================================
+     DESIGN AREA
+================================= -->
+
+<section class="design-area">
+
+
+    <div class="canvas-top">
+
+        <div>
+
+            <h2>
+                Design Canvas
+            </h2>
+
+            <p>
+                Build your website with your AI partner
             </p>
 
-            <button onclick="addText()">
-                <span>✦</span>
-                Add Text
+        </div>
+
+
+        <div class="device">
+            Desktop ▾
+        </div>
+
+    </div>
+
+
+
+<!-- =================================
+     WEBSITE
+================================= -->
+
+<div id="canvas"
+     class="website">
+
+
+    <!-- WEBSITE NAVBAR -->
+
+    <nav class="website-nav">
+
+        <strong>
+            🎓 My College
+        </strong>
+
+
+        <div class="nav-links">
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#courses">
+                Courses
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =================================
+         HOME
+    ================================= -->
+
+    <section
+        id="home"
+        class="hero">
+
+
+        <div class="badge">
+            ✨ TECH FEST 2026
+        </div>
+
+
+        <h1 id="heroTitle">
+            Build Your Future
+        </h1>
+
+
+        <p>
+            Learn. Create. Innovate.
+        </p>
+
+
+        <button id="mainButton">
+
+            Register Now →
+
+        </button>
+
+    </section>
+
+
+
+    <!-- =================================
+         ABOUT
+    ================================= -->
+
+    <section
+        id="about"
+        class="info-section">
+
+
+        <h2>
+            About My College
+        </h2>
+
+
+        <p>
+            Our college provides students
+            with opportunities to learn,
+            create, innovate and build
+            their future.
+        </p>
+
+    </section>
+
+
+
+    <!-- =================================
+         COURSES
+    ================================= -->
+
+    <section
+        id="courses"
+        class="cards">
+
+
+        <div class="card">
+
+            <div class="icon purple">
+                💻
+            </div>
+
+            <h3>
+                Technology
+            </h3>
+
+            <p>
+                Explore modern technologies
+                and build innovative solutions.
+            </p>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <div class="icon pink">
+                🚀
+            </div>
+
+            <h3>
+                Innovation
+            </h3>
+
+            <p>
+                Turn your ideas into
+                meaningful projects.
+            </p>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <div class="icon cyan">
+                🎯
+            </div>
+
+            <h3>
+                Opportunities
+            </h3>
+
+            <p>
+                Discover opportunities
+                for your future.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================
+         CONTACT
+    ================================= -->
+
+    <section
+        id="contact"
+        class="info-section">
+
+
+        <h2>
+            Contact Us
+        </h2>
+
+
+        <p>
+            📧 college@example.com
+        </p>
+
+
+        <p>
+            📞 +91 98765 43210
+        </p>
+
+    </section>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        Designed with InclusiDesign AI ✦
+
+    </footer>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =================================
+     AI PANEL
+================================= -->
+
+<aside class="ai-panel">
+
+
+    <div class="ai-header">
+
+        <div class="ai-icon">
+            ✨
+        </div>
+
+
+        <div>
+
+            <h2>
+                AI Design Partner
+            </h2>
+
+            <span>
+                ● Ready to collaborate
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- AI STATUS -->
+
+    <div
+        id="aiStatus"
+        class="ai-status">
+
+        🤖 Ready to analyze your design...
+
+    </div>
+
+
+
+    <!-- ANALYZE -->
+
+    <button
+        id="analyzeBtn"
+        class="analyze-btn">
+
+        🤖 Analyze My Design
+
+    </button>
+
+
+
+    <!-- AI SUGGESTION -->
+
+    <div
+        id="suggestion"
+        class="suggestion">
+
+
+        <div class="suggestion-label">
+            💡 AI INSIGHT
+        </div>
+
+
+        <h3>
+            Improve CTA visibility
+        </h3>
+
+
+        <p>
+            Your "Register Now" button
+            could stand out more from
+            the surrounding content.
+        </p>
+
+
+
+        <div class="why">
+
+            <strong>
+                🧠 Why?
+            </strong>
+
+            <span>
+                A stronger visual hierarchy
+                helps users notice the
+                primary action faster.
+            </span>
+
+        </div>
+
+
+
+        <div class="impact">
+
+            <span>
+                👁 User Focus
+            </span>
+
+            <span>
+                📖 Readability
+            </span>
+
+            <span>
+                🎯 Action
+            </span>
+
+        </div>
+
+
+
+        <div class="actions">
+
+
+            <button
+                id="applyBtn"
+                class="apply">
+
+                ✓ Apply
+
             </button>
 
-            <button onclick="addButton()">
-                <span>▣</span>
-                Add Button
-            </button>
 
-            <button onclick="addImage()">
-                <span>▧</span>
-                Add Image
-            </button>
+            <button
+                id="modifyBtn"
+                class="modify">
 
-            <button onclick="addSection()">
-                <span>＋</span>
-                Add Section
+                ✎ Modify
+
             </button>
 
 
-            <div class="tip">
+            <button
+                id="rejectBtn"
+                class="reject">
 
-                <strong>💡 Quick Tip</strong>
+                × Reject
 
-                <p>
-                    Design your website.
-                    Your AI partner will suggest
-                    improvements—but you stay in control.
-                </p>
+            </button>
 
-            </div>
+        </div>
 
-        </aside>
+    </div>
 
 
 
-        <!-- DESIGN AREA -->
+    <!-- HISTORY -->
 
-        <section class="design-area">
+    <div class="history">
 
-            <div class="canvas-top">
+        <h3>
+            Collaboration History
+        </h3>
 
-                <div>
 
-                    <h2>Design Canvas</h2>
+        <div id="historyList">
 
-                    <p>
-                        Build your website with your AI partner
-                    </p>
+            <div class="history-item">
 
-                </div>
+                <span>
+                    ●
+                </span>
 
-                <div class="device">
-                    Desktop ▾
-                </div>
+                Design created
 
             </div>
 
+        </div>
 
-            <!-- WEBSITE -->
+    </div>
 
-            <div id="canvas" class="website">
 
 
-                <!-- WEBSITE NAVBAR -->
+    <!-- HUMAN + AI -->
 
-                <nav class="website-nav">
+    <div class="collaboration">
 
-                    <strong>
-                        🎓 My College
-                    </strong>
+        <span>
+            🤝
+        </span>
 
-                    <div>
 
-                        <a>Home</a>
-                        <a>About</a>
-                        <a>Courses</a>
-                        <a>Contact</a>
+        <p>
 
-                    </div>
+            <strong>
+                You decide.
+            </strong>
 
-                </nav>
+            <br>
 
+            AI suggests.
+            You control
+            the final design.
 
-                <!-- HERO -->
+        </p>
 
-                <section class="hero">
+    </div>
 
-                    <div class="badge">
-                        ✨ TECH FEST 2026
-                    </div>
+</aside>
 
-                    <h1 id="heroTitle">
-                        Build Your Future
-                    </h1>
 
-                    <p>
-                        Learn. Create. Innovate.
-                    </p>
+</main>
 
-                    <button
-                        id="mainButton"
-                        onclick="mainButtonClicked()">
 
-                        Register Now →
 
-                    </button>
+<!-- =================================
+     JAVASCRIPT
+================================= -->
 
-                </section>
-
-
-                <!-- CARDS -->
-
-                <section
-                    id="cards"
-                    class="cards">
-
-                    <div class="card">
-
-                        <div class="icon purple">
-                            💻
-                        </div>
-
-                        <h3>
-                            Technology
-                        </h3>
-
-                        <p>
-                            Explore modern technologies
-                            and build innovative solutions.
-                        </p>
-
-                    </div>
-
-
-                    <div class="card">
-
-                        <div class="icon pink">
-                            🚀
-                        </div>
-
-                        <h3>
-                            Innovation
-                        </h3>
-
-                        <p>
-                            Turn your ideas into
-                            meaningful projects.
-                        </p>
-
-                    </div>
-
-
-                    <div class="card">
-
-                        <div class="icon cyan">
-                            🎯
-                        </div>
-
-                        <h3>
-                            Opportunities
-                        </h3>
-
-                        <p>
-                            Discover opportunities
-                            for your future.
-                        </p>
-
-                    </div>
-
-                </section>
-
-
-                <footer>
-
-                    Designed with InclusiDesign AI ✦
-
-                </footer>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- AI PANEL -->
-
-        <aside class="ai-panel">
-
-
-            <div class="ai-header">
-
-                <div class="ai-icon">
-                    ✨
-                </div>
-
-                <div>
-
-                    <h2>
-                        AI Design Partner
-                    </h2>
-
-                    <span>
-                        ● Ready to collaborate
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <!-- AI THINKING -->
-
-            <div
-                id="aiStatus"
-                class="ai-status">
-
-                🤖 Analyzing your design...
-
-            </div>
-
-
-            <!-- AI SUGGESTION -->
-
-            <div
-                id="suggestion"
-                class="suggestion">
-
-                <div class="suggestion-label">
-                    💡 AI INSIGHT
-                </div>
-
-                <h3>
-                    Improve CTA visibility
-                </h3>
-
-                <p>
-
-                    Your "Register Now" button
-                    could stand out more from
-                    the surrounding content.
-
-                </p>
-
-
-                <div class="why">
-
-                    <strong>
-                        🧠 Why?
-                    </strong>
-
-                    <span>
-                        A stronger visual hierarchy
-                        helps users notice the
-                        primary action faster.
-                    </span>
-
-                </div>
-
-
-                <div class="impact">
-
-                    <span>
-                        👁 User Focus
-                    </span>
-
-                    <span>
-                        📖 Readability
-                    </span>
-
-                    <span>
-                        🎯 Action
-                    </span>
-
-                </div>
-
-
-                <!-- AI ACTIONS -->
-
-                <div class="actions">
-
-                    <button
-                        class="apply"
-                        onclick="applySuggestion()">
-
-                        ✓ Apply
-
-                    </button>
-
-                    <button
-                        class="modify"
-                        onclick="modifySuggestion()">
-
-                        ✎ Modify
-
-                    </button>
-
-                    <button
-                        class="reject"
-                        onclick="rejectSuggestion()">
-
-                        × Reject
-
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <!-- HISTORY -->
-
-            <div class="history">
-
-                <h3>
-                    Collaboration History
-                </h3>
-
-                <div id="historyList">
-
-                    <div class="history-item">
-
-                        <span>●</span>
-
-                        Design created
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- HUMAN AI MESSAGE -->
-
-            <div class="collaboration">
-
-                <span>🤝</span>
-
-                <p>
-                    <strong>You decide.</strong><br>
-
-                    AI suggests. You control
-                    the final design.
-
-                </p>
-
-            </div>
-
-        </aside>
-
-    </main>
-
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 
 </body>
 

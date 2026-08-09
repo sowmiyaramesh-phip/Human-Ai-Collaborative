@@ -1001,3 +1001,150 @@ footer {
     }
 
 }
+/* =================================
+   AI ANALYZE BUTTON
+================================= */
+
+.analyze-btn {
+    width: 100%;
+    margin: 12px 0 18px;
+
+    padding: 13px 18px;
+
+    border: none;
+    border-radius: 10px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #06b6d4
+        );
+
+    font-size: 11px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(124, 58, 237, 0.25);
+
+    transition: 0.2s;
+}
+
+.analyze-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 30px rgba(124, 58, 237, 0.4);
+}
+
+.analyze-btn:active {
+    transform: scale(0.98);
+}
+/* =========================================
+   WORKING BUTTONS / NAVIGATION
+========================================= */
+
+.nav-links {
+    display: flex;
+    gap: 24px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.nav-links a:hover {
+    opacity: 0.65;
+    transform: translateY(-1px);
+}
+
+
+/* =========================================
+   INFO SECTIONS
+========================================= */
+
+.info-section {
+    padding: 70px 40px;
+    text-align: center;
+    background: #f8fafc;
+}
+
+.info-section h2 {
+    margin-bottom: 15px;
+}
+
+.info-section p {
+    max-width: 650px;
+    margin: 8px auto;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   ANALYZE BUTTON
+========================================= */
+
+.analyze-btn {
+    width: 100%;
+    padding: 14px 18px;
+    margin: 15px 0;
+    border: none;
+    border-radius: 10px;
+    background: #7c3aed;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.analyze-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.analyze-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+/* =========================================
+   ADDED ELEMENTS
+========================================= */
+
+.added-element {
+    border: 2px dashed #c4b5fd;
+    margin: 15px;
+    border-radius: 10px;
+}
+
+.added-button {
+    font-size: 15px;
+}
+
+.added-image {
+    border: 2px dashed #a78bfa;
+}
+
+.added-section {
+    margin: 20px;
+    border-radius: 12px;
+}
+
+
+/* =========================================
+   SMOOTH NAVIGATION
+========================================= */
+
+html {
+    scroll-behavior: smooth;
+}

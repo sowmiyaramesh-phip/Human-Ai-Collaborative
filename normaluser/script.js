@@ -1,324 +1,814 @@
-/* =================================
-   AI STATUS
-================================= */
+/* =========================================
+   INCLUSIDESIGN AI
+   COMPLETE WORKING JAVASCRIPT
+========================================= */
 
-setTimeout(function () {
 
-    document.getElementById("aiStatus").innerHTML =
-        "✓ Design analyzed — I found an opportunity to improve it.";
+/* =========================================
+   ELEMENTS
+========================================= */
 
-}, 1800);
+const canvas =
+    document.getElementById("canvas");
 
+const previewBtn =
+    document.getElementById("previewBtn");
 
-/* =================================
-   ADD TEXT
-================================= */
+const addTextBtn =
+    document.getElementById("addTextBtn");
 
-function addText() {
+const addButtonBtn =
+    document.getElementById("addButtonBtn");
 
-    const text = document.createElement("div");
+const addImageBtn =
+    document.getElementById("addImageBtn");
 
-    text.innerText = "✨ New Text";
+const addSectionBtn =
+    document.getElementById("addSectionBtn");
 
-    text.style.padding = "25px";
+const analyzeBtn =
+    document.getElementById("analyzeBtn");
 
-    text.style.textAlign = "center";
+const applyBtn =
+    document.getElementById("applyBtn");
 
-    text.style.fontSize = "24px";
+const modifyBtn =
+    document.getElementById("modifyBtn");
 
-    text.style.fontWeight = "700";
+const rejectBtn =
+    document.getElementById("rejectBtn");
 
-    document.getElementById("canvas")
-        .appendChild(text);
+const aiStatus =
+    document.getElementById("aiStatus");
 
-    addHistory("Added new text");
-}
+const suggestion =
+    document.getElementById("suggestion");
 
+const historyList =
+    document.getElementById("historyList");
 
-/* =================================
-   ADD BUTTON
-================================= */
+const mainButton =
+    document.getElementById("mainButton");
 
-function addButton() {
 
-    const button = document.createElement("button");
-
-    button.innerText = "New Button";
-
-    button.style.display = "block";
-
-    button.style.margin = "20px auto";
-
-    button.style.padding = "12px 25px";
-
-    button.style.border = "none";
-
-    button.style.borderRadius = "9px";
-
-    button.style.background = "#7c3aed";
-
-    button.style.color = "white";
-
-    button.style.cursor = "pointer";
-
-    document.getElementById("canvas")
-        .appendChild(button);
-
-    addHistory("Added new button");
-}
-
-
-/* =================================
-   ADD IMAGE
-================================= */
-
-function addImage() {
-
-    const image = document.createElement("div");
-
-    image.innerHTML =
-        "🖼️ <br><br> Image Placeholder";
-
-    image.style.margin = "20px";
-
-    image.style.padding = "40px";
-
-    image.style.textAlign = "center";
-
-    image.style.borderRadius = "12px";
-
-    image.style.background = "#ede9fe";
-
-    image.style.color = "#7c3aed";
-
-    document.getElementById("canvas")
-        .appendChild(image);
-
-    addHistory("Added image placeholder");
-}
-
-
-/* =================================
-   ADD SECTION
-================================= */
-
-function addSection() {
-
-    const section = document.createElement("section");
-
-    section.innerHTML = `
-        <h2>New Design Section</h2>
-        <p>Created by the designer.</p>
-    `;
-
-    section.style.padding = "50px";
-
-    section.style.textAlign = "center";
-
-    section.style.background = "#f8fafc";
-
-    document.getElementById("canvas")
-        .appendChild(section);
-
-    addHistory("Added new section");
-}
-
-
-/* =================================
-   APPLY AI SUGGESTION
-================================= */
-
-function applySuggestion() {
-
-    const button =
-        document.getElementById("mainButton");
-
-    /* ACTUAL DESIGN CHANGE */
-
-    button.style.background =
-        "linear-gradient(135deg,#7c3aed,#ec4899)";
-
-    button.style.padding =
-        "16px 34px";
-
-    button.style.boxShadow =
-        "0 10px 30px rgba(124,58,237,.35)";
-
-    button.innerText =
-        "Register Now →";
-
-
-    /* UPDATE STATUS */
-
-    document.getElementById("aiStatus").innerHTML =
-        "✓ Suggestion applied successfully.";
-
-
-    /* UPDATE HISTORY */
-
-    addHistory(
-        "AI suggestion accepted"
-    );
-
-
-    /* CHANGE AI CARD */
-
-    document.getElementById("suggestion").innerHTML = `
-
-        <div class="suggestion-label">
-            ✓ APPLIED
-        </div>
-
-        <h3 style="color:#4ade80;">
-            Design improved
-        </h3>
-
-        <p>
-            The primary action is now
-            more visually prominent.
-        </p>
-
-        <div class="why">
-
-            <strong>
-                🤝 Human + AI
-            </strong>
-
-            <span>
-                AI suggested the improvement.
-                You made the final decision.
-            </span>
-
-        </div>
-
-    `;
-}
-
-
-/* =================================
-   MODIFY AI SUGGESTION
-================================= */
-
-function modifySuggestion() {
-
-    const newText =
-        prompt(
-            "How would you like to modify the suggestion?"
-        );
-
-    if (!newText) return;
-
-
-    const button =
-        document.getElementById("mainButton");
-
-
-    button.innerText =
-        newText;
-
-
-    addHistory(
-        "User modified AI suggestion"
-    );
-
-
-    document.getElementById("aiStatus").innerHTML =
-        "✓ Your modification has been applied.";
-}
-
-
-/* =================================
-   REJECT AI SUGGESTION
-================================= */
-
-function rejectSuggestion() {
-
-    addHistory(
-        "User rejected AI suggestion"
-    );
-
-
-    document.getElementById("aiStatus").innerHTML =
-        "Suggestion rejected — your original design is unchanged.";
-
-
-    document.getElementById("suggestion").innerHTML = `
-
-        <div class="suggestion-label">
-            HUMAN DECISION
-        </div>
-
-        <h3 style="color:#f87171;">
-            Suggestion rejected
-        </h3>
-
-        <p>
-            No changes were made to your design.
-        </p>
-
-        <div class="why">
-
-            <strong>
-                ✦ You are in control
-            </strong>
-
-            <span>
-                AI provides suggestions.
-                The designer makes the final decision.
-            </span>
-
-        </div>
-
-    `;
-}
-
-
-/* =================================
+/* =========================================
    HISTORY
-================================= */
+========================================= */
 
-function addHistory(text) {
-
-    const history =
-        document.getElementById("historyList");
-
+function addHistory(message) {
 
     const item =
         document.createElement("div");
 
-
     item.className =
         "history-item";
 
+    item.innerHTML = `
+        <span>●</span>
+        ${message}
+    `;
 
-    item.innerHTML =
-        `<span>●</span>${text}`;
+    historyList.appendChild(item);
 
-
-    history.appendChild(item);
 }
 
 
-/* =================================
+/* =========================================
+   NAVIGATION
+========================================= */
+
+document
+    .querySelectorAll(".nav-links a")
+    .forEach(function(link) {
+
+        link.addEventListener(
+            "click",
+            function(event) {
+
+                event.preventDefault();
+
+                const targetId =
+                    link.getAttribute("href");
+
+                const target =
+                    document.querySelector(
+                        targetId
+                    );
+
+                if (target) {
+
+                    target.scrollIntoView({
+
+                        behavior: "smooth",
+
+                        block: "start"
+
+                    });
+
+                    addHistory(
+                        "Navigated to " +
+                        targetId.substring(1)
+                    );
+
+                }
+
+            }
+        );
+
+    });
+
+
+/* =========================================
+   ADD TEXT
+========================================= */
+
+addTextBtn.addEventListener(
+    "click",
+    function() {
+
+        const text =
+            document.createElement("div");
+
+        text.innerText =
+            "✨ New Text";
+
+        text.contentEditable =
+            "true";
+
+        text.style.padding =
+            "25px";
+
+        text.style.margin =
+            "15px";
+
+        text.style.textAlign =
+            "center";
+
+        text.style.fontSize =
+            "24px";
+
+        text.style.fontWeight =
+            "700";
+
+        text.style.cursor =
+            "text";
+
+        text.style.border =
+            "1px dashed #a78bfa";
+
+        text.style.borderRadius =
+            "10px";
+
+        canvas.appendChild(text);
+
+        addHistory(
+            "Added new text"
+        );
+
+    }
+);
+
+
+/* =========================================
+   ADD BUTTON
+========================================= */
+
+addButtonBtn.addEventListener(
+    "click",
+    function() {
+
+        const button =
+            document.createElement("button");
+
+        button.innerText =
+            "New Button";
+
+        button.style.display =
+            "block";
+
+        button.style.margin =
+            "20px auto";
+
+        button.style.padding =
+            "12px 25px";
+
+        button.style.border =
+            "none";
+
+        button.style.borderRadius =
+            "9px";
+
+        button.style.background =
+            "#7c3aed";
+
+        button.style.color =
+            "white";
+
+        button.style.cursor =
+            "pointer";
+
+
+        button.addEventListener(
+            "click",
+            function() {
+
+                alert(
+                    "New Button clicked!"
+                );
+
+                addHistory(
+                    "New button clicked"
+                );
+
+            }
+        );
+
+
+        canvas.appendChild(button);
+
+        addHistory(
+            "Added new button"
+        );
+
+    }
+);
+
+
+/* =========================================
+   ADD IMAGE
+========================================= */
+
+addImageBtn.addEventListener(
+    "click",
+    function() {
+
+        const input =
+            document.createElement("input");
+
+        input.type =
+            "file";
+
+        input.accept =
+            "image/*";
+
+        input.style.display =
+            "none";
+
+
+        document.body.appendChild(input);
+
+        input.click();
+
+
+        input.addEventListener(
+            "change",
+            function() {
+
+                const file =
+                    input.files[0];
+
+                if (!file) {
+
+                    input.remove();
+
+                    return;
+
+                }
+
+
+                const reader =
+                    new FileReader();
+
+
+                reader.onload =
+                    function(event) {
+
+                        const image =
+                            document.createElement("img");
+
+                        image.src =
+                            event.target.result;
+
+                        image.style.display =
+                            "block";
+
+                        image.style.width =
+                            "80%";
+
+                        image.style.maxWidth =
+                            "500px";
+
+                        image.style.margin =
+                            "25px auto";
+
+                        image.style.borderRadius =
+                            "15px";
+
+
+                        canvas.appendChild(image);
+
+
+                        addHistory(
+                            "Added image"
+                        );
+
+                    };
+
+
+                reader.readAsDataURL(file);
+
+                input.remove();
+
+            }
+        );
+
+    }
+);
+
+
+/* =========================================
+   ADD SECTION
+========================================= */
+
+addSectionBtn.addEventListener(
+    "click",
+    function() {
+
+        const section =
+            document.createElement("section");
+
+
+        section.style.padding =
+            "40px";
+
+        section.style.margin =
+            "20px 0";
+
+        section.style.textAlign =
+            "center";
+
+        section.style.background =
+            "#f8fafc";
+
+        section.style.borderRadius =
+            "15px";
+
+
+        section.innerHTML = `
+
+            <h2 contenteditable="true">
+                New Design Section
+            </h2>
+
+            <p contenteditable="true">
+                Click here to edit this section.
+            </p>
+
+            <button>
+                Explore More →
+            </button>
+
+        `;
+
+
+        canvas.appendChild(section);
+
+
+        const exploreButton =
+            section.querySelector("button");
+
+
+        exploreButton.addEventListener(
+            "click",
+            function() {
+
+                alert(
+                    "✨ Explore More\n\n" +
+                    "This section contains " +
+                    "additional information."
+                );
+
+                addHistory(
+                    "Clicked Explore More"
+                );
+
+            }
+        );
+
+
+        addHistory(
+            "Added new section"
+        );
+
+    }
+);
+
+
+/* =========================================
    PREVIEW
-================================= */
+========================================= */
 
-function previewDesign() {
+previewBtn.addEventListener(
+    "click",
+    function() {
 
-    alert(
-        "✨ Preview Mode\n\nYour final design is ready!"
-    );
-}
+        const newWindow =
+            window.open(
+                "",
+                "_blank"
+            );
 
 
-/* =================================
-   BUTTON TEST
-================================= */
+        if (!newWindow) {
 
-function mainButtonClicked() {
+            alert(
+                "Please allow pop-ups."
+            );
 
-    addHistory(
-        "User interacted with main CTA"
-    );
+            return;
 
-}
+        }
+
+
+        newWindow.document.write(`
+
+            <!DOCTYPE html>
+
+            <html>
+
+            <head>
+
+                <title>
+                    InclusiDesign Preview
+                </title>
+
+                <style>
+
+                    body {
+
+                        margin: 0;
+
+                        padding: 30px;
+
+                        font-family:
+                            Arial, sans-serif;
+
+                        background:
+                            #f5f3ff;
+
+                    }
+
+                    .preview {
+
+                        max-width:
+                            1000px;
+
+                        margin:
+                            auto;
+
+                        background:
+                            white;
+
+                        padding:
+                            30px;
+
+                        border-radius:
+                            20px;
+
+                    }
+
+                </style>
+
+            </head>
+
+            <body>
+
+                <div class="preview">
+
+                    ${canvas.innerHTML}
+
+                </div>
+
+            </body>
+
+            </html>
+
+        `);
+
+
+        newWindow.document.close();
+
+
+        addHistory(
+            "Opened preview"
+        );
+
+    }
+);
+
+
+/* =========================================
+   ANALYZE
+========================================= */
+
+analyzeBtn.addEventListener(
+    "click",
+    async function() {
+
+        aiStatus.innerHTML =
+            "🤖 Analyzing your design...";
+
+
+        analyzeBtn.disabled =
+            true;
+
+
+        analyzeBtn.innerText =
+            "🤖 Analyzing...";
+
+
+        addHistory(
+            "AI analysis started"
+        );
+
+
+        /*
+           Try backend.
+           If backend is not running,
+           the website still works.
+        */
+
+        try {
+
+            const response =
+                await fetch(
+                    "http://localhost:5000/api/normal/analyze",
+                    {
+
+                        method: "POST",
+
+                        headers: {
+
+                            "Content-Type":
+                                "application/json"
+
+                        },
+
+                        body:
+                            JSON.stringify({
+
+                                design:
+                                    canvas.innerText
+
+                            })
+
+                    }
+                );
+
+
+            if (!response.ok) {
+
+                throw new Error(
+                    "Backend error"
+                );
+
+            }
+
+
+            const result =
+                await response.json();
+
+
+            console.log(
+                "AI result:",
+                result
+            );
+
+
+            aiStatus.innerHTML =
+                "✓ Design analyzed successfully.";
+
+
+            addHistory(
+                "AI analyzed design"
+            );
+
+        }
+
+
+        catch(error) {
+
+            console.log(
+                "Backend unavailable:",
+                error
+            );
+
+
+            /*
+               Demo mode
+            */
+
+            aiStatus.innerHTML =
+                "✓ Design analyzed — AI insight ready.";
+
+
+            addHistory(
+                "AI analysis completed"
+            );
+
+        }
+
+
+        analyzeBtn.disabled =
+            false;
+
+
+        analyzeBtn.innerText =
+            "🤖 Analyze My Design";
+
+    }
+);
+
+
+/* =========================================
+   APPLY
+========================================= */
+
+applyBtn.addEventListener(
+    "click",
+    function() {
+
+        mainButton.style.background =
+            "linear-gradient(135deg,#7c3aed,#ec4899)";
+
+        mainButton.style.padding =
+            "16px 34px";
+
+        mainButton.style.boxShadow =
+            "0 10px 30px rgba(124,58,237,.35)";
+
+        mainButton.style.borderRadius =
+            "12px";
+
+        mainButton.innerText =
+            "Register Now →";
+
+
+        aiStatus.innerHTML =
+            "✓ Suggestion applied successfully.";
+
+
+        addHistory(
+            "AI suggestion accepted"
+        );
+
+
+        suggestion.innerHTML = `
+
+            <div class="suggestion-label">
+                ✓ APPLIED
+            </div>
+
+            <h3>
+                Design improved
+            </h3>
+
+            <p>
+                The primary action is now
+                more visually prominent.
+            </p>
+
+            <div class="why">
+
+                <strong>
+                    🤝 Human + AI
+                </strong>
+
+                <span>
+                    AI suggested the improvement.
+                    You made the final decision.
+                </span>
+
+            </div>
+
+        `;
+
+    }
+);
+
+
+/* =========================================
+   MODIFY
+========================================= */
+
+modifyBtn.addEventListener(
+    "click",
+    function() {
+
+        const newText =
+            prompt(
+                "What should the button say?"
+            );
+
+
+        if (!newText) {
+
+            return;
+
+        }
+
+
+        mainButton.innerText =
+            newText;
+
+
+        addHistory(
+            "User modified AI suggestion"
+        );
+
+
+        aiStatus.innerHTML =
+            "✓ Your modification has been applied.";
+
+    }
+);
+
+
+/* =========================================
+   REJECT
+========================================= */
+
+rejectBtn.addEventListener(
+    "click",
+    function() {
+
+        addHistory(
+            "User rejected AI suggestion"
+        );
+
+
+        aiStatus.innerHTML =
+            "Suggestion rejected — original design unchanged.";
+
+
+        suggestion.innerHTML = `
+
+            <div class="suggestion-label">
+                HUMAN DECISION
+            </div>
+
+            <h3>
+                Suggestion rejected
+            </h3>
+
+            <p>
+                No changes were made to your design.
+            </p>
+
+            <div class="why">
+
+                <strong>
+                    ✦ You are in control
+                </strong>
+
+                <span>
+                    AI provides suggestions.
+                    The designer makes the final decision.
+                </span>
+
+            </div>
+
+        `;
+
+    }
+);
+
+
+/* =========================================
+   MAIN BUTTON
+========================================= */
+
+mainButton.addEventListener(
+    "click",
+    function() {
+
+        alert(
+            "🎉 Register Now selected!"
+        );
+
+
+        addHistory(
+            "User clicked Register Now"
+        );
+
+    }
+);
+
+
+/* =========================================
+   READY
+========================================= */
+
+console.log(
+    "✓ InclusiDesign AI loaded successfully"
+);

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>InclusiDesign AI</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- TOP NAVIGATION -->
+
+    <header class="topbar">
+
+        <div class="logo">
+            ✦ InclusiDesign
+            <span>AI</span>
+        </div>
+
+        <div class="project">
+            My College Website
+        </div>
+
+        <button class="preview-btn" onclick="previewDesign()">
+            Preview ↗
+        </button>
+
+    </header>
+
+
+    <!-- MAIN WORKSPACE -->
+
+    <main class="workspace">
+
+
+        <!-- LEFT TOOLBAR -->
+
+        <aside class="sidebar">
+
+            <p class="tool-title">
+                DESIGN TOOLS
+            </p>
+
+            <button onclick="addText()">
+                <span>✦</span>
+                Add Text
+            </button>
+
+            <button onclick="addButton()">
+                <span>▣</span>
+                Add Button
+            </button>
+
+            <button onclick="addImage()">
+                <span>▧</span>
+                Add Image
+            </button>
+
+            <button onclick="addSection()">
+                <span>＋</span>
+                Add Section
+            </button>
+
+
+            <div class="tip">
+
+                <strong>💡 Quick Tip</strong>
+
+                <p>
+                    Design your website.
+                    Your AI partner will suggest
+                    improvements—but you stay in control.
+                </p>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- DESIGN AREA -->
+
+        <section class="design-area">
+
+            <div class="canvas-top">
+
+                <div>
+
+                    <h2>Design Canvas</h2>
+
+                    <p>
+                        Build your website with your AI partner
+                    </p>
+
+                </div>
+
+                <div class="device">
+                    Desktop ▾
+                </div>
+
+            </div>
+
+
+            <!-- WEBSITE -->
+
+            <div id="canvas" class="website">
+
+
+                <!-- WEBSITE NAVBAR -->
+
+                <nav class="website-nav">
+
+                    <strong>
+                        🎓 My College
+                    </strong>
+
+                    <div>
+
+                        <a>Home</a>
+                        <a>About</a>
+                        <a>Courses</a>
+                        <a>Contact</a>
+
+                    </div>
+
+                </nav>
+
+
+                <!-- HERO -->
+
+                <section class="hero">
+
+                    <div class="badge">
+                        ✨ TECH FEST 2026
+                    </div>
+
+                    <h1 id="heroTitle">
+                        Build Your Future
+                    </h1>
+
+                    <p>
+                        Learn. Create. Innovate.
+                    </p>
+
+                    <button
+                        id="mainButton"
+                        onclick="mainButtonClicked()">
+
+                        Register Now →
+
+                    </button>
+
+                </section>
+
+
+                <!-- CARDS -->
+
+                <section
+                    id="cards"
+                    class="cards">
+
+                    <div class="card">
+
+                        <div class="icon purple">
+                            💻
+                        </div>
+
+                        <h3>
+                            Technology
+                        </h3>
+
+                        <p>
+                            Explore modern technologies
+                            and build innovative solutions.
+                        </p>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <div class="icon pink">
+                            🚀
+                        </div>
+
+                        <h3>
+                            Innovation
+                        </h3>
+
+                        <p>
+                            Turn your ideas into
+                            meaningful projects.
+                        </p>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <div class="icon cyan">
+                            🎯
+                        </div>
+
+                        <h3>
+                            Opportunities
+                        </h3>
+
+                        <p>
+                            Discover opportunities
+                            for your future.
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+                <footer>
+
+                    Designed with InclusiDesign AI ✦
+
+                </footer>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- AI PANEL -->
+
+        <aside class="ai-panel">
+
+
+            <div class="ai-header">
+
+                <div class="ai-icon">
+                    ✨
+                </div>
+
+                <div>
+
+                    <h2>
+                        AI Design Partner
+                    </h2>
+
+                    <span>
+                        ● Ready to collaborate
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- AI THINKING -->
+
+            <div
+                id="aiStatus"
+                class="ai-status">
+
+                🤖 Analyzing your design...
+
+            </div>
+
+
+            <!-- AI SUGGESTION -->
+
+            <div
+                id="suggestion"
+                class="suggestion">
+
+                <div class="suggestion-label">
+                    💡 AI INSIGHT
+                </div>
+
+                <h3>
+                    Improve CTA visibility
+                </h3>
+
+                <p>
+
+                    Your "Register Now" button
+                    could stand out more from
+                    the surrounding content.
+
+                </p>
+
+
+                <div class="why">
+
+                    <strong>
+                        🧠 Why?
+                    </strong>
+
+                    <span>
+                        A stronger visual hierarchy
+                        helps users notice the
+                        primary action faster.
+                    </span>
+
+                </div>
+
+
+                <div class="impact">
+
+                    <span>
+                        👁 User Focus
+                    </span>
+
+                    <span>
+                        📖 Readability
+                    </span>
+
+                    <span>
+                        🎯 Action
+                    </span>
+
+                </div>
+
+
+                <!-- AI ACTIONS -->
+
+                <div class="actions">
+
+                    <button
+                        class="apply"
+                        onclick="applySuggestion()">
+
+                        ✓ Apply
+
+                    </button>
+
+                    <button
+                        class="modify"
+                        onclick="modifySuggestion()">
+
+                        ✎ Modify
+
+                    </button>
+
+                    <button
+                        class="reject"
+                        onclick="rejectSuggestion()">
+
+                        × Reject
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- HISTORY -->
+
+            <div class="history">
+
+                <h3>
+                    Collaboration History
+                </h3>
+
+                <div id="historyList">
+
+                    <div class="history-item">
+
+                        <span>●</span>
+
+                        Design created
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- HUMAN AI MESSAGE -->
+
+            <div class="collaboration">
+
+                <span>🤝</span>
+
+                <p>
+                    <strong>You decide.</strong><br>
+
+                    AI suggests. You control
+                    the final design.
+
+                </p>
+
+            </div>
+
+        </aside>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

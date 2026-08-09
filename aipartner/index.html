@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>InclusiDesign — AI Design Lab</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">✦</div>
+
+            <div>
+                <h2>InclusiDesign</h2>
+                <span>AI Design Lab</span>
+            </div>
+        </div>
+
+
+        <nav>
+
+            <button class="nav-item active">
+                <span>◈</span>
+                Overview
+            </button>
+
+            <button class="nav-item">
+                <span>◉</span>
+                Accessibility
+            </button>
+
+            <button class="nav-item">
+                <span>◇</span>
+                Usability
+            </button>
+
+            <button class="nav-item">
+                <span>◌</span>
+                Visual Design
+            </button>
+
+            <button class="nav-item">
+                <span>⌁</span>
+                AI Suggestions
+            </button>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="ai-online">
+                <span class="online-dot"></span>
+
+                <div>
+                    <strong>AI Engine</strong>
+                    <small>Online</small>
+                </div>
+            </div>
+
+            <div class="version">
+                POC v1.0
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main">
+
+        <!-- HEADER -->
+
+        <header class="header">
+
+            <div>
+
+                <p class="eyebrow">
+                    DESIGN INTELLIGENCE
+                </p>
+
+                <h1>
+                    AI Design Lab
+                </h1>
+
+                <p class="subtitle">
+                    Analyze your design. Understand problems.
+                    Get suggestions — you stay in control.
+                </p>
+
+            </div>
+
+
+            <div class="header-actions">
+
+                <div class="project-status">
+                    <span></span>
+                    Project connected
+                </div>
+
+                <button
+                    class="analyze-btn"
+                    onclick="runAnalysis()">
+
+                    ✦ Analyze Design
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- ANALYSIS STATUS -->
+
+        <div
+            id="analysisStatus"
+            class="analysis-status">
+
+            <div class="status-icon">
+                ✓
+            </div>
+
+            <div>
+
+                <strong>
+                    Analysis complete
+                </strong>
+
+                <p>
+                    Last analyzed just now
+                </p>
+
+            </div>
+
+            <span class="status-time">
+                Live
+            </span>
+
+        </div>
+
+
+        <!-- SCORE SECTION -->
+
+        <section class="score-grid">
+
+
+            <!-- MAIN SCORE -->
+
+            <div class="score-card main-score">
+
+                <div class="card-heading">
+
+                    <div>
+                        <span class="card-label">
+                            OVERALL DESIGN HEALTH
+                        </span>
+
+                        <h2>
+                            Design Score
+                        </h2>
+                    </div>
+
+                    <span class="sparkle">
+                        ✦
+                    </span>
+
+                </div>
+
+
+                <div class="score-content">
+
+                    <div class="score-ring">
+
+                        <div class="ring-inner">
+
+                            <strong id="overallScore">
+                                82
+                            </strong>
+
+                            <span>
+                                / 100
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="score-message">
+
+                        <div class="score-good">
+                            ● Good foundation
+                        </div>
+
+                        <p>
+                            Your design is visually strong,
+                            but a few improvements could make
+                            the experience clearer.
+                        </p>
+
+                        <div class="score-change">
+                            ↑ 8 points since last analysis
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- MINI SCORES -->
+
+            <div class="metric-card">
+
+                <div class="metric-icon purple">
+                    👁
+                </div>
+
+                <span>
+                    Accessibility
+                </span>
+
+                <strong id="accessScore">
+                    86%
+                </strong>
+
+                <div class="progress">
+                    <div
+                        id="accessBar"
+                        style="width:86%">
+                    </div>
+                </div>
+
+                <small>
+                    Strong
+                </small>
+
+            </div>
+
+
+            <div class="metric-card">
+
+                <div class="metric-icon cyan">
+                    ◈
+                </div>
+
+                <span>
+                    Readability
+                </span>
+
+                <strong id="readScore">
+                    74%
+                </strong>
+
+                <div class="progress">
+                    <div
+                        id="readBar"
+                        style="width:74%">
+                    </div>
+                </div>
+
+                <small>
+                    Needs attention
+                </small>
+
+            </div>
+
+
+            <div class="metric-card">
+
+                <div class="metric-icon pink">
+                    ✦
+                </div>
+
+                <span>
+                    Visual Hierarchy
+                </span>
+
+                <strong id="visualScore">
+                    91%
+                </strong>
+
+                <div class="progress">
+                    <div
+                        id="visualBar"
+                        style="width:91%">
+                    </div>
+                </div>
+
+                <small>
+                    Excellent
+                </small>
+
+            </div>
+
+        </section>
+
+
+        <!-- MIDDLE SECTION -->
+
+        <section class="middle-grid">
+
+
+            <!-- DETECTED ISSUES -->
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="card-label">
+                            SMART DETECTION
+                        </span>
+
+                        <h2>
+                            Detected Issues
+                        </h2>
+
+                    </div>
+
+                    <span class="issue-count">
+                        3 issues
+                    </span>
+
+                </div>
+
+
+                <div class="issue-list">
+
+
+                    <div class="issue">
+
+                        <div class="issue-icon warning">
+                            !
+                        </div>
+
+                        <div class="issue-info">
+
+                            <strong>
+                                CTA visibility
+                            </strong>
+
+                            <p>
+                                Primary button may not
+                                attract enough attention.
+                            </p>
+
+                        </div>
+
+                        <span class="risk medium">
+                            Medium
+                        </span>
+
+                    </div>
+
+
+                    <div class="issue">
+
+                        <div class="issue-icon warning">
+                            !
+                        </div>
+
+                        <div class="issue-info">
+
+                            <strong>
+                                Text hierarchy
+                            </strong>
+
+                            <p>
+                                Some headings are too close
+                                in visual importance.
+                            </p>
+
+                        </div>
+
+                        <span class="risk low">
+                            Low
+                        </span>
+
+                    </div>
+
+
+                    <div class="issue">
+
+                        <div class="issue-icon success">
+                            ✓
+                        </div>
+
+                        <div class="issue-info">
+
+                            <strong>
+                                Colour contrast
+                            </strong>
+
+                            <p>
+                                Text and background contrast
+                                meets the target level.
+                            </p>
+
+                        </div>
+
+                        <span class="risk good">
+                            Good
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- ANALYSIS GRAPH -->
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="card-label">
+                            DESIGN INSIGHTS
+                        </span>
+
+                        <h2>
+                            Experience Balance
+                        </h2>
+
+                    </div>
+
+                    <span class="period">
+                        Current
+                    </span>
+
+                </div>
+
+
+                <div class="bars">
+
+                    <div class="bar-row">
+
+                        <span>
+                            Accessibility
+                        </span>
+
+                        <div class="bar-track">
+                            <div
+                                class="bar-fill"
+                                style="width:86%">
+                            </div>
+                        </div>
+
+                        <strong>
+                            86
+                        </strong>
+
+                    </div>
+
+
+                    <div class="bar-row">
+
+                        <span>
+                            Clarity
+                        </span>
+
+                        <div class="bar-track">
+                            <div
+                                class="bar-fill"
+                                style="width:74%">
+                            </div>
+                        </div>
+
+                        <strong>
+                            74
+                        </strong>
+
+                    </div>
+
+
+                    <div class="bar-row">
+
+                        <span>
+                            Navigation
+                        </span>
+
+                        <div class="bar-track">
+                            <div
+                                class="bar-fill"
+                                style="width:88%">
+                            </div>
+                        </div>
+
+                        <strong>
+                            88
+                        </strong>
+
+                    </div>
+
+
+                    <div class="bar-row">
+
+                        <span>
+                            Consistency
+                        </span>
+
+                        <div class="bar-track">
+                            <div
+                                class="bar-fill"
+                                style="width:93%">
+                            </div>
+                        </div>
+
+                        <strong>
+                            93
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- AI RECOMMENDATIONS -->
+
+        <section class="recommendation-panel">
+
+            <div class="recommendation-header">
+
+                <div>
+
+                    <span class="card-label">
+                        AI DESIGN PARTNER
+                    </span>
+
+                    <h2>
+                        Recommendations
+                    </h2>
+
+                    <p>
+                        AI suggestions are recommendations,
+                        not automatic changes.
+                    </p>
+
+                </div>
+
+                <div class="ai-badge">
+                    ✦ AI
+                </div>
+
+            </div>
+
+
+            <div class="recommendations">
+
+
+                <!-- RECOMMENDATION 1 -->
+
+                <article class="recommendation">
+
+                    <div class="recommendation-number">
+                        01
+                    </div>
+
+                    <div class="recommendation-content">
+
+                        <div class="recommendation-title">
+
+                            <h3>
+                                Improve CTA visibility
+                            </h3>
+
+                            <span class="priority">
+                                High impact
+                            </span>
+
+                        </div>
+
+                        <p>
+                            Make the primary action visually
+                            stronger so users can identify it
+                            faster.
+                        </p>
+
+                        <div class="why">
+
+                            <strong>
+                                Why?
+                            </strong>
+
+                            <span>
+                                Clear visual hierarchy can
+                                reduce hesitation during
+                                important actions.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <button
+                        class="send-btn"
+                        onclick="sendSuggestion(1)">
+
+                        Send to Designer →
+
+                    </button>
+
+                </article>
+
+
+                <!-- RECOMMENDATION 2 -->
+
+                <article class="recommendation">
+
+                    <div class="recommendation-number">
+                        02
+                    </div>
+
+                    <div class="recommendation-content">
+
+                        <div class="recommendation-title">
+
+                            <h3>
+                                Strengthen heading hierarchy
+                            </h3>
+
+                            <span class="priority low-priority">
+                                Medium impact
+                            </span>
+
+                        </div>
+
+                        <p>
+                            Increase the difference between
+                            main headings and supporting text.
+                        </p>
+
+                        <div class="why">
+
+                            <strong>
+                                Why?
+                            </strong>
+
+                            <span>
+                                Users can scan the page more
+                                easily when content levels
+                                are visually distinct.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <button
+                        class="send-btn"
+                        onclick="sendSuggestion(2)">
+
+                        Send to Designer →
+
+                    </button>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER MESSAGE -->
+
+        <div class="human-message">
+
+            <span class="human-icon">
+                🤝
+            </span>
+
+            <div>
+
+                <strong>
+                    Human + AI collaboration
+                </strong>
+
+                <p>
+                    The AI identifies opportunities and
+                    explains them. The designer decides
+                    what to accept.
+                </p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

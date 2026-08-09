@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>InclusiDesign AI - Blind Design</title>
+
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+
+    <link rel="stylesheet"
+          href="blindstyle.css">
+</head>
+
+<body>
+
+<!-- =====================================================
+     NORMAL HOME SIDEBAR
+     ===================================================== -->
+
+<aside class="side-panel" id="mainSidebar">
+
+    <button class="side-logo"
+            onclick="goHome()"
+            aria-label="InclusiDesign Home">
+        ✦
+    </button>
+
+    <nav class="side-navigation">
+
+        <button class="side-item create-item"
+                onclick="showCreateOptions()">
+            <span class="side-icon">＋</span>
+            <span class="side-text">Create</span>
+        </button>
+
+        <button class="side-item active"
+                onclick="goHome()">
+            <span class="side-icon">⌂</span>
+            <span class="side-text">Home</span>
+        </button>
+
+        <button class="side-item"
+                onclick="speak('Projects selected.')">
+            <span class="side-icon">▱</span>
+            <span class="side-text">Projects</span>
+        </button>
+
+        <button class="side-item"
+                onclick="speak('Templates selected.')">
+            <span class="side-icon">▣</span>
+            <span class="side-text">Templates</span>
+        </button>
+
+        <button class="side-item"
+                onclick="speak('Print Shop selected.')">
+            <span class="side-icon">♧</span>
+            <span class="side-text">Print Shop</span>
+        </button>
+
+        <button class="side-item"
+                onclick="speak('Brand selected.')">
+            <span class="side-icon">◉</span>
+            <span class="side-text">Brand</span>
+        </button>
+
+        <button class="side-item"
+                onclick="speak('Inclusi AI selected.')">
+            <span class="side-icon">✦</span>
+            <span class="side-text">Inclusi AI</span>
+        </button>
+
+        <button class="side-item"
+                onclick="speak('More options selected.')">
+            <span class="side-icon">•••</span>
+            <span class="side-text">More</span>
+        </button>
+
+    </nav>
+
+    <div class="side-bottom">
+
+        <button class="side-item"
+                onclick="speak('Notifications selected.')">
+
+            <span class="side-icon">♧</span>
+
+            <span class="side-text">
+                Notifications
+            </span>
+
+        </button>
+
+        <button class="profile-circle"
+                onclick="speak('Profile selected.')">
+            👤
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- =====================================================
+     NORMAL HEADER
+     ===================================================== -->
+
+<header class="header" id="mainHeader">
+
+    <div class="logo">
+
+        <span class="logo-icon">
+            ✦
+        </span>
+
+        <span class="logo-name">
+            InclusiDesign <strong>AI</strong>
+        </span>
+
+    </div>
+
+    <div class="header-actions">
+
+        <button class="audio-button"
+                onclick="readWelcome()">
+            🔊 Audio
+        </button>
+
+        <button class="profile-button"
+                onclick="speak('Profile selected.')">
+            👤
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     MAIN
+     ===================================================== -->
+
+<main class="main-container">
+
+
+    <!-- =================================================
+         HOME
+         ================================================= -->
+
+    <section id="homePage"
+             class="page">
+
+        <div class="intro">
+
+            <p class="welcome-text">
+                WELCOME TO INCLUSIVE DESIGN
+            </p>
+
+            <h1>
+                Design without limits.
+            </h1>
+
+            <p class="intro-description">
+                Create beautiful designs using your voice.
+                InclusiDesign AI helps you design independently.
+            </p>
+
+        </div>
+
+
+        <section class="design-section">
+
+            <div class="canvas-heading">
+
+                <div>
+
+                    <span class="canvas-title">
+                        DESIGN PAGE
+                    </span>
+
+                    <span class="canvas-subtitle">
+                        Your creative space
+                    </span>
+
+                </div>
+
+                <span class="ready">
+                    ● READY
+                </span>
+
+            </div>
+
+
+            <div class="design-canvas">
+
+                <div class="empty-design">
+
+                    <div class="design-icon">
+                        ✦
+                    </div>
+
+                    <h2>
+                        Your Design
+                    </h2>
+
+                    <p>
+                        Your design will appear here.
+                    </p>
+
+                    <p class="voice-message">
+                        Say "Create a poster",
+                        "Create a presentation",
+                        or "Create an invitation".
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="voice-section">
+
+            <button class="voice-button"
+                    onclick="startVoice()"
+                    id="voiceButton">
+
+                🎙️
+                Start Designing
+
+            </button>
+
+            <p id="voiceStatus">
+                Press the button and tell InclusiDesign AI
+                what you want to create.
+            </p>
+
+        </section>
+
+    </section>
+
+
+    <!-- =================================================
+         CREATE OPTIONS
+         ================================================= -->
+
+    <section id="createPage"
+             class="page hidden">
+
+        <div class="create-heading">
+
+            <p class="welcome-text">
+                CREATE A NEW DESIGN
+            </p>
+
+            <h1>
+                What would you like to create?
+            </h1>
+
+            <p>
+                Choose a design or use your voice.
+            </p>
+
+        </div>
+
+
+        <div class="template-grid">
+
+
+            <button class="template-card"
+                    onclick="openEditor('poster')">
+
+                <div class="template-icon">
+                    ▣
+                </div>
+
+                <h2>
+                    Poster
+                </h2>
+
+                <p>
+                    Create posters for events,
+                    announcements and more.
+                </p>
+
+                <span>
+                    Start Poster →
+                </span>
+
+            </button>
+
+
+            <button class="template-card"
+                    onclick="openEditor('presentation')">
+
+                <div class="template-icon">
+                    ▤
+                </div>
+
+                <h2>
+                    Presentation
+                </h2>
+
+                <p>
+                    Create slides and presentations
+                    using your voice.
+                </p>
+
+                <span>
+                    Start Presentation →
+                </span>
+
+            </button>
+
+
+            <button class="template-card"
+                    onclick="openEditor('invitation')">
+
+                <div class="template-icon">
+                    ✉
+                </div>
+
+                <h2>
+                    Invitation
+                </h2>
+
+                <p>
+                    Create beautiful invitations
+                    for every occasion.
+                </p>
+
+                <span>
+                    Start Invitation →
+                </span>
+
+            </button>
+
+        </div>
+
+
+        <div class="voice-choice">
+
+            🎙️
+
+            Say:
+            "Poster",
+            "Presentation",
+            or
+            "Invitation"
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         FRESH EDITOR
+         ================================================= -->
+
+    <section id="editorPage"
+             class="editor-page hidden">
+
+
+        <!-- TOP BAR -->
+
+        <div class="editor-topbar">
+
+            <div class="editor-logo">
+
+                <span class="logo-icon">
+                    ✦
+                </span>
+
+                <span class="logo-name">
+                    InclusiDesign <strong>AI</strong>
+                </span>
+
+            </div>
+
+
+            <div class="editor-design-name">
+
+                <span id="editorTitle">
+                    Poster Design
+                </span>
+
+                <small>
+                    Voice-powered design editor
+                </small>
+
+            </div>
+
+
+            <div class="editor-actions">
+
+                <button class="save-button"
+                        onclick="saveDesign()">
+                    Save Design
+                </button>
+
+                <button class="editor-profile"
+                        onclick="speak('Profile selected.')">
+                    👤
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- WORKSPACE -->
+
+        <div class="editor-workspace">
+
+
+            <!-- LEFT TOOLBAR -->
+
+            <aside class="editor-tools">
+
+                <p class="tools-title">
+                    DESIGN TOOLS
+                </p>
+
+
+                <button onclick="addText()">
+
+                    <span class="tool-icon">
+                        T
+                    </span>
+
+                    Add Text
+
+                </button>
+
+
+                <button onclick="searchImageManually()">
+
+                    <span class="tool-icon">
+                        ▧
+                    </span>
+
+                    Add Image
+
+                </button>
+
+
+                <button onclick="changeBackground()">
+
+                    <span class="tool-icon">
+                        ◉
+                    </span>
+
+                    Background
+
+                </button>
+
+
+                <button onclick="addShape()">
+
+                    <span class="tool-icon">
+                        □
+                    </span>
+
+                    Add Shape
+
+                </button>
+
+
+                <button onclick="importDesign()">
+
+                    <span class="tool-icon">
+                        ⇧
+                    </span>
+
+                    Import
+
+                </button>
+
+
+                <button onclick="undoDesign()">
+
+                    <span class="tool-icon">
+                        ↶
+                    </span>
+
+                    Undo
+
+                </button>
+
+
+                <button onclick="redoDesign()">
+
+                    <span class="tool-icon">
+                        ↷
+                    </span>
+
+                    Redo
+
+                </button>
+
+
+                <button onclick="readCurrentDesign()">
+
+                    <span class="tool-icon">
+                        🔊
+                    </span>
+
+                    Read Design
+
+                </button>
+
+            </aside>
+
+
+            <!-- CENTRE -->
+
+            <div class="editor-canvas-area">
+
+
+                <div class="editor-canvas-heading">
+
+                    <span id="canvasType">
+                        POSTER
+                    </span>
+
+                    <span class="canvas-ready">
+                        ● READY
+                    </span>
+
+                </div>
+
+
+                <!-- ACTUAL DESIGN PAGE -->
+
+                <div id="realCanvas"
+                     class="real-canvas">
+
+                    <div class="canvas-placeholder">
+
+                        <div class="big-design-icon">
+                            ✦
+                        </div>
+
+                        <h1 id="canvasHeading">
+                            Your Poster
+                        </h1>
+
+                        <p id="canvasSubheading">
+                            Start creating with your voice
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button class="editor-voice-button"
+                        onclick="startEditorVoice()">
+
+                    🎙️
+                    Tell me what to change
+
+                </button>
+
+
+                <p id="editorVoiceStatus"
+                   class="editor-voice-status">
+
+                    Say:
+                    "Add a mountain image"
+                    or
+                    "Add text"
+
+                </p>
+
+            </div>
+
+
+            <!-- RIGHT AI PANEL -->
+
+            <aside class="ai-panel">
+
+                <div class="ai-title">
+
+                    <span class="ai-star">
+                        ✦
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            AI Design Partner
+                        </strong>
+
+                        <small>
+                            ● Ready to help
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="ai-message">
+
+                    <strong>
+                        Voice Design Assistant
+                    </strong>
+
+                    <p id="aiMessage">
+                        Tell me what you want
+                        to add or change.
+                    </p>
+
+                </div>
+
+
+                <p class="suggestions-title">
+                    QUICK ACTIONS
+                </p>
+
+
+                <div class="suggestions">
+
+                    <button onclick="addText()">
+                        ＋ Add Text
+                    </button>
+
+                    <button onclick="searchImageManually()">
+                        ▧ Add Image
+                    </button>
+
+                    <button onclick="changeBackground()">
+                        ◉ Background
+                    </button>
+
+                    <button onclick="addShape()">
+                        □ Add Shape
+                    </button>
+
+                    <button onclick="readCurrentDesign()">
+                        🔊 Read Design
+                    </button>
+
+                </div>
+
+
+                <button class="back-to-create"
+                        onclick="backToCreate()">
+
+                    ← Back to Designs
+
+                </button>
+
+            </aside>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer id="mainFooter">
+
+    <span>
+        ♿ Accessibility First
+    </span>
+
+    <span class="dot">
+        •
+    </span>
+
+    <span>
+        Voice Powered Design
+    </span>
+
+    <span class="dot">
+        •
+    </span>
+
+    <span>
+        InclusiDesign AI
+    </span>
+
+</footer>
+
+
+<script src="blindscript.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>InclusiDesign AI</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="indexstyle.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         MODE SELECTION SCREEN
+    ====================================================== -->
+
+    <section id="modeScreen" class="mode-screen">
+
+        <div class="mode-wrapper">
+
+            <!-- LOGO -->
+            <div class="mode-logo">
+                <span>✦</span>
+                InclusiDesign <b>AI</b>
+            </div>
+
+            <!-- TITLE -->
+            <h1 class="mode-title">
+                Welcome to InclusiDesign AI
+            </h1>
+
+            <p class="mode-subtitle">
+                Choose your preferred experience
+            </p>
+
+            <!-- TWO MODE CARDS -->
+            <div class="mode-cards">
+
+                <!-- NORMAL USER CARD -->
+                <div
+                    class="mode-card normal-card"
+                    id="normalModeCard"
+                    tabindex="0"
+                    role="button"
+                    aria-label="Select Normal User Mode">
+
+                    <div class="mode-icon normal-icon">
+                        🖥️
+                    </div>
+
+                    <div class="mode-card-content">
+
+                        <h2>
+                            Normal User
+                        </h2>
+
+                        <span class="mode-label">
+                            STANDARD MODE
+                        </span>
+
+                        <p>
+                            Use the standard InclusiDesign AI
+                            interface with the complete visual
+                            design canvas and AI assistant.
+                        </p>
+
+                    </div>
+
+                    <div class="mode-arrow">
+                        →
+                    </div>
+
+                </div>
+
+
+                <!-- BLIND USER CARD -->
+                <div
+    class="mode-card blind-card"
+    id="blindModeCard"
+    tabindex="0"
+    role="button"
+    aria-label="Select Blind User Mode"
+    onclick="goToBlindUser()"
+    onkeydown="if(event.key === 'Enter' || event.key === ' ') goToBlindUser()">
+
+                    <div class="mode-icon blind-icon">
+                        🔊
+                    </div>
+
+                    <div class="mode-card-content">
+
+                        <h2>
+                            Blind User
+                        </h2>
+
+                        <span class="mode-label blind-label">
+                            ACCESSIBILITY MODE
+                        </span>
+
+                        <p>
+                            Use a high-contrast accessible
+                            experience with larger controls,
+                            keyboard navigation and voice support.
+                        </p>
+
+                    </div>
+
+                    <div class="mode-arrow">
+                        →
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- FOOTER -->
+            <div class="mode-footer">
+                <span>✦</span>
+                Designed with accessibility in mind
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         MAIN WEBSITE
+    ====================================================== -->
+
+    <div id="mainWebsite" class="main-website">
+
+
+        <!-- =================================================
+             TOP HEADER
+        ================================================== -->
+
+        <header class="top-header">
+
+            <div class="brand">
+
+                <span class="brand-star">
+                    ✦
+                </span>
+
+                <span class="brand-text">
+                    InclusiDesign <strong>AI</strong>
+                </span>
+
+            </div>
+
+
+            <div class="website-name">
+                My College Website
+            </div>
+
+
+            <button
+                type="button"
+                class="preview-button"
+                id="previewButton">
+
+                Preview ↗
+
+            </button>
+
+        </header>
+
+
+        <!-- =================================================
+             MAIN LAYOUT
+        ================================================== -->
+
+        <div class="main-layout">
+
+
+            <!-- =================================================
+                 LEFT SIDEBAR
+            ================================================== -->
+
+            <aside class="left-sidebar">
+
+                <div class="sidebar-heading">
+                    DESIGN TOOLS
+                </div>
+
+
+                <button type="button" class="tool-button">
+                    ✦ Add Text
+                </button>
+
+
+                <button type="button" class="tool-button">
+                    ▣ Add Button
+                </button>
+
+
+                <button type="button" class="tool-button">
+                    ▧ Add Image
+                </button>
+
+
+                <button type="button" class="tool-button">
+                    ＋ Add Section
+                </button>
+
+
+                <div class="quick-tip">
+
+                    <h3>
+                        💡 Quick Tip
+                    </h3>
+
+                    <p>
+                        Design your website.
+                        Your AI partner will suggest
+                        improvements—but you stay in control.
+                    </p>
+
+                </div>
+
+            </aside>
+
+
+            <!-- =================================================
+                 CENTER DESIGN CANVAS
+            ================================================== -->
+
+            <main class="design-canvas">
+
+                <div class="canvas-header">
+
+                    <div>
+
+                        <h1>
+                            Design Canvas
+                        </h1>
+
+                        <p>
+                            Build your website with your AI partner
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="device-button">
+
+                        Desktop ▾
+
+                    </button>
+
+                </div>
+
+
+                <!-- =================================================
+                     COLLEGE WEBSITE PREVIEW
+                ================================================== -->
+
+                <div class="college-preview">
+
+
+                    <!-- COLLEGE NAVIGATION -->
+
+                    <nav class="college-navigation">
+
+                        <div class="college-brand">
+                            🎓 My College
+                        </div>
+
+
+                        <div class="college-links">
+
+                            <a href="#home">
+                                Home
+                            </a>
+
+                            <a href="#about">
+                                About
+                            </a>
+
+                            <a href="#courses">
+                                Courses
+                            </a>
+
+                            <a href="#contact">
+                                Contact
+                            </a>
+
+                        </div>
+
+                    </nav>
+
+
+                    <!-- =================================================
+                         HERO SECTION
+                    ================================================== -->
+
+                    <section
+                        id="home"
+                        class="college-hero">
+
+                        <div class="festival-badge">
+                            ✨ TECH FEST 2026
+                        </div>
+
+
+                        <h1>
+                            Build Your Future
+                        </h1>
+
+
+                        <p>
+                            Learn. Create. Innovate.
+                        </p>
+
+
+                        <button
+                            type="button"
+                            id="registerButton"
+                            class="register-button">
+
+                            Register Now →
+
+                        </button>
+
+                    </section>
+
+
+                    <!-- =================================================
+                         ABOUT SECTION
+                    ================================================== -->
+
+                    <section
+                        id="about"
+                        class="about-section">
+
+                        <h2>
+                            About My College
+                        </h2>
+
+                        <p>
+                            Our college provides students with
+                            opportunities to learn, create,
+                            innovate and build their future.
+                        </p>
+
+                    </section>
+
+
+                    <!-- =================================================
+                         COURSES SECTION
+                    ================================================== -->
+
+                    <section
+                        id="courses"
+                        class="courses-section">
+
+                        <h2>
+                            Our Courses
+                        </h2>
+
+
+                        <div class="course-grid">
+
+
+                            <div class="course-card">
+
+                                <div class="course-icon">
+                                    💻
+                                </div>
+
+                                <h3>
+                                    Computer Science
+                                </h3>
+
+                                <p>
+                                    Programming and software development.
+                                </p>
+
+                            </div>
+
+
+                            <div class="course-card">
+
+                                <div class="course-icon">
+                                    🤖
+                                </div>
+
+                                <h3>
+                                    Artificial Intelligence
+                                </h3>
+
+                                <p>
+                                    Machine learning and intelligent systems.
+                                </p>
+
+                            </div>
+
+
+                            <div class="course-card">
+
+                                <div class="course-icon">
+                                    📊
+                                </div>
+
+                                <h3>
+                                    Data Science
+                                </h3>
+
+                                <p>
+                                    Data analysis and visualization.
+                                </p>
+
+                            </div>
+
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =================================================
+                         CONTACT SECTION
+                    ================================================== -->
+
+                    <section
+                        id="contact"
+                        class="contact-section">
+
+                        <h2>
+                            Contact Us
+                        </h2>
+
+                        <p>
+                            Email: college@example.com
+                        </p>
+
+                    </section>
+
+                </div>
+
+            </main>
+
+
+            <!-- =================================================
+                 RIGHT AI SIDEBAR
+            ================================================== -->
+
+            <aside class="ai-sidebar">
+
+
+                <!-- AI HEADER -->
+
+                <div class="ai-header">
+
+                    <div class="ai-logo">
+                        ✨
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            AI Design Partner
+                        </h2>
+
+                        <span class="ai-ready">
+                            ● Ready to collaborate
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- AI STATUS -->
+
+                <div class="ai-status">
+                    🤖 Ready to analyze your design...
+                </div>
+
+
+                <!-- ANALYZE BUTTON -->
+
+                <button
+                    type="button"
+                    class="analyze-button"
+                    id="analyzeButton">
+
+                    🤖 Analyze My Design
+
+                </button>
+
+
+                <!-- AI INSIGHT -->
+
+                <div class="insight-card">
+
+                    <div class="insight-label">
+                        💡 AI INSIGHT
+                    </div>
+
+
+                    <h3>
+                        Improve CTA visibility
+                    </h3>
+
+
+                    <p>
+                        Your "Register Now" button could stand
+                        out more from the surrounding content.
+                    </p>
+
+
+                    <div class="why-box">
+
+                        <strong>
+                            🧠 Why?
+                        </strong>
+
+                        <p>
+                            A stronger visual hierarchy helps
+                            users notice the primary action faster.
+                        </p>
+
+                    </div>
+
+
+                    <div class="insight-tags">
+
+                        <span>
+                            👁 User Focus
+                        </span>
+
+                        <span>
+                            📖 Readability
+                        </span>
+
+                        <span>
+                            🎯 Action
+                        </span>
+
+                    </div>
+
+
+                    <div class="ai-actions">
+
+                        <button
+                            type="button"
+                            class="apply-button"
+                            id="applyButton">
+
+                            ✓ Apply
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="modify-button"
+                            id="modifyButton">
+
+                            ✎ Modify
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="reject-button"
+                            id="rejectButton">
+
+                            × Reject
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- COLLABORATION HISTORY -->
+
+                <div class="history">
+
+                    <h3>
+                        Collaboration History
+                    </h3>
+
+
+                    <div class="history-item">
+                        <span>●</span>
+                        Design created
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </div>
+
+
+    <!-- MESSAGE -->
+    <div
+        id="message"
+        class="message"
+        role="status"
+        aria-live="polite">
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="indexscript.js"></script>
+
+</body>
+
+</html>
